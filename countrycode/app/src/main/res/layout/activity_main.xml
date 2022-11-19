@@ -14,7 +14,8 @@
         android:gravity="bottom"
         android:textStyle="bold"
         android:layout_marginLeft="20dp"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/editTextNumbeCC"
@@ -28,7 +29,7 @@
         android:inputType="number"
         android:background="@drawable/editboxborder"
         app:layout_constraintTop_toBottomOf="@id/textPhoneLbl"
-        />
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/editTextPhone"

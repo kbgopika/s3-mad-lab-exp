@@ -1,22 +1,29 @@
 package com.example.splashscreen;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class MainActivity extends AppCompatActivity {
-    private ListView list;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class SplashActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        String tasks[]={"1","2","3","4","5"};
-
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        list=(ListView)findViewById(R.id.lvt);
-        ArrayAdapter adaptor=new ArrayAdapter<String>(this,R.layout.todotasklist,tasks);
-        list.setAdapter(adaptor);
+        setContentView(R.layout.activity_splash);
+        Handler handler=new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                startActivity(new Intent(SplashActivity.this,MainActivity.class));
+                finish();
+            }
+        }, 4000);
+
+
     }
 }
